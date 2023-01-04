@@ -58,7 +58,7 @@ export default {
     this.loadRestaurants(this.$route.params.id);
   },
   methods: {
-    async loadRestaurants(id) {
+    async loadRestaurants(id) { // load data
       await axios.get('http://127.0.0.1:8000/api/find-by-id/'+ id).then(res => {
         console.log('res', res.data)
         const resData = res.data;

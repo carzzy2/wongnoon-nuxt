@@ -88,7 +88,7 @@ export default {
   async created() {
     this.search = this.$route.query.search ? this.$route.query.search : ''
     this.page = this.$route.query.page;
-    if(this.$route.query.search){
+    if(this.$route.query.search){ // breadcrumb
       this.items[1] = {
         text: this.$route.query.search,
         href: '#'
@@ -97,7 +97,7 @@ export default {
     await this.loadListData(this.search, this.page)
   },
   methods: {
-    async loadListData(search = '', page = 1) {
+    async loadListData(search = '', page = 1) { // load card data
       if (!page) {
         page = 1
       }
@@ -107,14 +107,14 @@ export default {
         this.listData = resData
       })
     },
-    onSubmit(event) {
+    onSubmit(event) { // search
       event.preventDefault()
       window.location.href = '/?search=' + this.search
     },
     onReset(event) {
       event.preventDefault()
     },
-    selectItem(id) {
+    selectItem(id) { // on click card
       console.log(id)
       window.location.href = '/restaurants/' + id
     },
@@ -137,7 +137,7 @@ export default {
       }
     },
     changePaginate(event, page) {
-      console.log('page', page)
+      // console.log('page', page)
       let url = ''
       if (page) {
         url = '/?page=' + page
