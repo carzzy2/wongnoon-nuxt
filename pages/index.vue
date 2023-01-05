@@ -17,6 +17,7 @@
               <b-input-group-append>
                 <b-button variant='info' type='submit'>
                   <fa :icon="['fas', 'search']" />
+                  Search
                 </b-button>
               </b-input-group-append>
             </b-input-group>
