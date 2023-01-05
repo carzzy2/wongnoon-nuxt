@@ -16,7 +16,7 @@
               <b-form-input v-model='search' placeholder='Search....'></b-form-input>
               <b-input-group-append>
                 <b-button variant='info' type='submit'>
-                  <fa :icon="['fas', 'search']" />
+<!--                  <fa :icon="['fas', 'search']" />-->
                   Search
                 </b-button>
               </b-input-group-append>
