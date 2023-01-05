@@ -17,6 +17,7 @@
               <b-input-group-append>
                 <b-button variant='info' type='submit'>
 <!--                  <fa :icon="['fas', 'search']" />-->
+                  <b-icon-search></b-icon-search>
                   Search
                 </b-button>
               </b-input-group-append>
@@ -51,7 +52,7 @@
               <b-col v-for='(val, index) in listData.data' v-bind:key='index' md='3' class='pointer'>
                 <b-card
                   v-bind:title='val.name'
-                  v-bind:img-src='val.photo ? val.photo : "~/assets/biz-promotion.svg"'
+                  v-bind:img-src='val.photo ? val.photo : defaultCoverImage'
                   img-alt='Image'
                   img-top
                   tag='article'
@@ -150,6 +151,7 @@ export default {
   },
   data() {
     return {
+      defaultCoverImage: require('~/assets/biz-promotion.svg'),
       listData: {},
       search: '',
       items: [
