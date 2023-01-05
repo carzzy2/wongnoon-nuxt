@@ -81,8 +81,7 @@
 </template>
 
 <script>
-import axios from 'axios'
-
+import axios from 'axios';
 export default {
   name: 'IndexPage',
   async created() {
@@ -101,7 +100,7 @@ export default {
       if (!page) {
         page = 1
       }
-      await axios.get('http://127.0.0.1:8000/api/search?search=' + search + '&page=' + page).then(res => {
+      await axios.get(this.$axios.defaults.baseURL + '/api/search?search=' + search + '&page=' + page).then(res => {
         console.log('res', res.data)
         const resData = res.data
         this.listData = resData
